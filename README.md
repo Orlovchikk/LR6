@@ -18,6 +18,10 @@
 6. [Просмотр последних изменений](#просмотр-последних-изменений)
 7. [Слияние веток и разрешение конфликтов](#слияние-веток-и-разрешение-конфликтов)
 8. [Удаление побочной ветки](#удаление-побочной-ветки)
+9. [Откат коммита](#откат-коммита)
+10. [Создание ветки для отчёта](#создание-ветки-для-отчёта)
+11. [История операций в отчёте](#история-операций-в-отчёте)
+12. [Выводы](#выводы)
 
 ## Форк репозитория LR6
 
@@ -33,18 +37,18 @@
 
 3. Настраиваем имя пользователя и email:
 
-        ```bash
-        git config --global user.name "orlovchik"
-        git config --global user.email svetl.orlovaa@gmail.com
-        ```
+    ```bash
+    git config --global user.name "orlovchik"
+    git config --global user.email svetl.orlovaa@gmail.com
+    ```
 
 ## Клонирование репозитория
 
 1. Клонируем репозиторий на локальную машину:
 
-        ```bash
-        git clone https://github.com/orlovchik/LR6.git
-        ```
+    ```bash
+    git clone https://github.com/orlovchik/LR6.git
+    ```
 
 ## Добавление файла в GitHub и подтягивание изменений
 
@@ -52,73 +56,113 @@
 
 2. Подтягиваем изменения на локальную машину:
 
-        ```bash
-        git pull
-        ```
+    ```bash
+    git pull
+    ```
 
 ## История операций для каждой из веток
 
 1. Получить историю коммитов для всех веток можно с помощью команды:
 
-        ```bash
-        git log --all
-        ```
+    ```bash
+    git log --all
+    ```
 
-        ![История коммитов](img/git_log.png)
+    ![История коммитов](img/git_log.png)
 
 ## Просмотр последних изменений
 
 1. Для просмотра изменений последнего коммита используется команда:
 
-        ```bash
-        git log -p -1
-        ```
+    ```bash
+    git log -p -1
+    ```
 
-        ![Последние изменения](img/git_latest_commit.png)
+    ![Последние изменения](img/git_latest_commit.png)
 
 ## Слияние веток и разрешение конфликтов
 
 1. Для создания ветки `branch1` использовалась команда:
 
-        ```bash
-        git branch -b branch1
-        ```
+    ```bash
+    git branch -b branch1
+    ```
 
 2. На ветке `branch1` были сделаны некоторые изменения, после чего прописана следующие команды:
 
-        ```bash
-        git add .
-        git commit -m 'idk'
-        ```
+    ```bash
+    git add .
+    git commit -m 'idk'
+    ```
 
 3. Переключение на ветку `master`:
 
-        ```bash
-        git checkout master
-        ```
+    ```bash
+    git checkout master
+    ```
 
 4. Слияние веток `master` и `branch1`:
 
-        ```bash
-        git merge branch1
-        ```
+    ```bash
+    git merge branch1
+    ```
 
 5. Разрешила конфликт в файле [README.md](README.md) при помощи "Merge Resolve" в VSCode (приняла версию из ветки `branch1`).
 
-        ![Разрешение конфликта](assets/resolve_merge.png)
+    ![Разрешение конфликта](assets/resolve_merge.png)
 
 ## Удаление побочной ветки
 
 1. Перейдем на ветку `master`:
 
-        ```bash
-        git checkout master
-        ```
+    ```bash
+    git checkout master
+    ```
 
 2. Удаление локальной ветки:
 
-        ```bash
-        git branch -d branch1
-        ```
+    ```bash
+    git branch -d branch1
+    ```
 
-        [Удаление ветки `branch1`](img/delete_branch.png)
+    [Удаление ветки `branch1`](img/delete_branch.png)
+
+## Откат коммита
+
+1. Получение истории коммитов:
+
+    ```bash
+    git log --oneline
+    ```
+
+    ![История коммитов](img/git_log_for%20reset.png)
+
+2. Откат коммита:
+
+    ```bash
+    git reset --hard df1c3b7
+    ```
+
+    ![Отмена коммита](img/reset.png)
+
+## Создание ветки для отчёта
+
+1. Создание новой ветки `final` и переключение на нее:
+
+    ```bash
+    git checkout -b report
+    ```
+
+## История операций в отчёте
+
+1. Получение истории коммитов в форматированном виде:
+
+    ```bash
+    git log --pretty=format:"%h - %ad - %an - %s" --date=format:"%d.%m.%Y %H:%M:%S"
+    ```
+
+![История коммитов](img/git_history.png)
+
+## Выводы
+
+В ходе выполнения лабораторной работы №6 освоены основные команды Git и приобретены навыки работы с удалёнными репозиториями на GitHub. Изучены комманды fork, clone, commit, merge, reset.
