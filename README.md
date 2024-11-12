@@ -135,15 +135,13 @@
     git log --oneline
     ```
 
-    ![История коммитов](img/git_log_for%20reset.png)
+    ![История коммитов](img/git_log_for_reset.png)
 
 2. Откат коммита:
 
     ```bash
-    git reset --hard df1c3b7
+    git reset --hard df1c3b732cf58bf63bc47beec39f8f122e8311ec
     ```
-
-    ![Отмена коммита](img/reset.png)
 
 ## Создание ветки для отчёта
 
