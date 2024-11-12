@@ -148,7 +148,7 @@
 1. Создание новой ветки `final` и переключение на нее:
 
     ```bash
-    git checkout -b report
+    git checkout -b final
     ```
 
 ## История операций в отчёте
