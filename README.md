@@ -42,6 +42,8 @@
     git config --global user.email svetl.orlovaa@gmail.com
     ```
 
+    ![Настройка стандартного пользователя](img/set_up_git_config.png)
+
 ## Клонирование репозитория
 
 1. Клонируем репозиторий на локальную машину:
@@ -50,9 +52,13 @@
     git clone https://github.com/orlovchik/LR6.git
     ```
 
+    ![Клонирование репозитория](img/git_clone.png)
+
 ## Добавление файла в GitHub и подтягивание изменений
 
-1. Нажатием кнопки "Add file" -> "Upload files" добавляем [Загрузка файлов](img/upload_file.png) в репозиторий.
+1. Нажатием кнопки "Add file" -> "Upload files" добавляем  в репозиторий.
+
+    ![Загрузка файлов](img/upload_file.png)
 
 2. Подтягиваем изменения на локальную машину:
 
@@ -88,6 +94,8 @@
     git branch -b branch1
     ```
 
+    ![Последние изменения](img/branch1.png)
+
 2. На ветке `branch1` были сделаны некоторые изменения, после чего прописана следующие команды:
 
     ```bash
@@ -109,7 +117,7 @@
 
 5. Разрешила конфликт в файле [README.md](README.md) при помощи "Merge Resolve" в VSCode (приняла версию из ветки `branch1`).
 
-    ![Разрешение конфликта](assets/resolve_merge.png)
+    ![Разрешение конфликта](img/resolve_merge.png)
 
 ## Удаление побочной ветки
 
@@ -125,7 +133,7 @@
     git branch -d branch1
     ```
 
-    [Удаление ветки `branch1`](img/delete_branch.png)
+    ![Удаление ветки `branch1`](img/delete_branch.png)
 
 ## Откат коммита
 
